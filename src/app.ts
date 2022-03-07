@@ -2,5 +2,7 @@ function sum(a: number,b: number){
     return a+b;
 
 }
-const result = sum(5,6);
+const a: number = 5;
+const b: number = 6;
+const result = sum(a,b);
 console.log(result);
