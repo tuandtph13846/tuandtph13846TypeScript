@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import ShowInfo from './components/ShowInfo'
-import { ProducType } from './types/product';
+
 import axios from 'axios';
 import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -12,75 +12,64 @@ import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import Product from './pages/Product';
 import AdminLayout from './pages/layouts/AdminLayout';
 import ManagerProduct from './pages/ManagerProduct';
-
+import ProductAdd from './pages/ProductAdd';
+import { add, list, remove , update } from './api/product';
+import "bootstrap/dist/css/bootstrap.min.css"
+import { ProductType } from './types/product';
+import ProductEdit from './pages/ProductEdit';
+import PrivateRouter from './components/PrivateRouter';
 
 function App() {
-  
-  const [products, setProduct] = useState<ProducType[]>([]);
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState(0)
+  const [products, setProduct] = useState<ProductType[]>([]);
+  // const [count, setCount] = useState<number>(0);
 
   useEffect(() => { 
     const getProducts = async () => {
-      const { data } = await axios.get('http://localhost:3000/products');
+      const { data } = await  list();
       setProduct(data);
     }
     getProducts();
   },[])
 
-const removeItem = (id: number)=>{
-
+const removeItem = async (id: number)=>{
+    // Xóa trên ADI
+    // const { data } = await remove(id);
+    //reRender
+    remove(id);
+    setProduct(products.filter(item => item.id !== id));
 }
-
+const onHandleAdd = async (product: ProductType)=> {
+  //call api
+  const { data } = await add(product);
+  setProduct([...products,data])
+}
+const onHandleUpdate = async (product:ProductType) => {
+  console.log(product);
+ const { data } = await update(product)
+ setProduct(products.map(item => item.id == data.id ? data : item));
+}
   return (
-    <div className="App">
-      {count} <button onClick={() => setCount(count + 1)}>Click</button>
 
-      <hr />
-      {/* <table>
-        <thead>
-          <th>#</th>
-          <th></th>
-          <th></th>
-        </thead>
-        <tbody>
-          {products && products.map((item, index) => {
-            return <tr>
-                      <td>{index + 1}</td>
-                      <td>{item.name}</td>
-                      <td>
-                        <button onClick={() => removeItem(item._id)}>Remove</button>
-                      </td>
-                  </tr>
-          })}
-        </tbody>
-      </table> */}
-      <header>
-        <ul>
-          <li><NavLink to="/">Home page</NavLink></li>
-          <li><NavLink to="/product">Product page</NavLink></li>
-          <li><NavLink to="/about">About page</NavLink></li>
-          <li><NavLink to="/admin/dashboad">Admin Dashboad</NavLink></li>
-        </ul>
-      </header>
-      <main>
-        <Routes>
-            {/* <Route path="/" element={<h1>Home page</h1>}/>
-            <Route path="/product" element={<h1>Products page</h1>}/>
-            <Route path="/about" element={<h1>About page</h1>}/> */}
+    <Routes>
 
-            <Route path="/" element={<WebsiteLayout/>}>
-              <Route index element={<Home/>} />
-              <Route path="product" element={<Product/>} />
-            </Route>
-            <Route path="admin" element={<AdminLayout />}> 
-              <Route index element={<Navigate to="dashboard"/>} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="product" element={<ManagerProduct />} />
-            </Route>
-        </Routes>
-      </main>
-      {/* {products.map(item => <div>{item.name}</div>)} */}
-    </div>
+
+        <Route path="/" element={<WebsiteLayout/>}>
+          <Route index element={<Home/>} />
+          <Route path="product" element={<Product/>} />
+          <Route path="login" element={ <h1>LoginPage</h1> } />
+        </Route>
+        <Route path="admin" element={<PrivateRouter><AdminLayout /></PrivateRouter>}> 
+          <Route index element={<Navigate to="dashboard"/>} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="products">
+                    <Route index element={<ManagerProduct data={products} onRemove={removeItem}/>} />
+                    <Route path="add" element={<ProductAdd  onAdd={onHandleAdd}/>} />
+                    <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate}/>} />
+          </Route>
+        </Route>
+    </Routes>
+
   )
 }
 
