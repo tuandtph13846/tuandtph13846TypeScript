@@ -1,9 +1,14 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "tuan",
-      "price": "123"
+      "name": "Thuốc diệt cỏ",
+      "price": "123456",
+      "id": 2
+    },
+    {
+      "name": "thuan",
+      "price": "123456",
+      "id": 3
     }
   ]
 }

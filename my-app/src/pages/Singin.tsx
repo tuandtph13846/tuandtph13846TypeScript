@@ -10,10 +10,10 @@ type FormValues = {
 }
 const Signin = () =>{
     const { register,handleSubmit,formState: {errors}} = useForm<FormValues>();
-    const naviga = useNavigate();
+    const navigate = useNavigate();
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         const {data: user} = await signin(data);
-        authenticate(user,() => navigate('/'));
+        authenticate(user ,() => navigate('/'));
     }
     return (
         <div>

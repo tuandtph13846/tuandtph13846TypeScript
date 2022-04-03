@@ -19,6 +19,8 @@ import PrivateRouter from './components/PrivateRouter';
 import Signup from './pages/Signup';
 import Signin from './pages/Singin';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   // const [count, setCount] = useState(0)
   const [products, setProduct] = useState<ProductType[]>([]);

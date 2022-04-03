@@ -1,13 +1,14 @@
 import React from 'react'
+
 import { Outlet } from 'react-router-dom'
 
-type Props = {}
 
+type Props = {}
 const AdminLayout = (props: Props) => {
   return (
     <div>
         <header>
-            Header admin
+            Header admim      
         </header>
         <aside>
             Menu Admin
