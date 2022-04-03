@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import ShowInfo from './components/ShowInfo'
-
 import axios from 'axios';
 import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import Product from './pages/Product';
 import AdminLayout from './pages/layouts/AdminLayout';
@@ -18,9 +16,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { ProductType } from './types/product';
 import ProductEdit from './pages/ProductEdit';
 import PrivateRouter from './components/PrivateRouter';
+import Signup from './pages/Signup';
+import Signin from './pages/Singin';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
   const [products, setProduct] = useState<ProductType[]>([]);
   // const [count, setCount] = useState<number>(0);
 
@@ -50,25 +50,28 @@ const onHandleUpdate = async (product:ProductType) => {
  setProduct(products.map(item => item.id == data.id ? data : item));
 }
   return (
-
-    <Routes>
-
-
+    <div>
+      <Routes>
         <Route path="/" element={<WebsiteLayout/>}>
           <Route index element={<Home/>} />
           <Route path="product" element={<Product/>} />
-          <Route path="login" element={ <h1>LoginPage</h1> } />
+          {/* <Route path="login" element={ <h1>LoginPage</h1> } /> */}
+          
+          <Route path="signup" element= {<Signup/>}/>
+          <Route path="signin" element= {<Signin/>}/>
         </Route>
-        <Route path="admin" element={<PrivateRouter><AdminLayout /></PrivateRouter>}> 
+        <Route path="admin" element={<AdminLayout/>}> 
           <Route index element={<Navigate to="dashboard"/>} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="products">
-                    <Route index element={<ManagerProduct data={products} onRemove={removeItem}/>} />
+          <Route path="product" >
+                    <Route index  element={<ManagerProduct data={products} onRemove={removeItem}/>}/>
                     <Route path="add" element={<ProductAdd  onAdd={onHandleAdd}/>} />
                     <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate}/>} />
-          </Route>
-        </Route>
+          </Route> 
+        </Route>  
     </Routes>
+    </div>
+    
 
   )
 }

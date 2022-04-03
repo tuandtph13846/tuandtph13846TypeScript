@@ -1,8 +1,9 @@
 {
-    "products":[
-        {
-            "id": 1,
-            "name" : "tuan"
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "tuan",
+      "price": "123"
+    }
+  ]
 }
