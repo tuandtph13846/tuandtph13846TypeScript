@@ -69,10 +69,10 @@ const WebsiteLayout = (props: Props) => {
                 <div className="signing text-right">
                   <div className="container">
                     <div className="sign-in">
-                      <a href="signin.html">Sign In</a>
+                      <a href="signin">Sign In</a>
                     </div>
                     <div className="sign-up1">
-                      <a href="signin.html">Sign Up</a>
+                      <a href="signup">Sign Up</a>
                     </div>
                     <div className="clearfix" />
                   </div>

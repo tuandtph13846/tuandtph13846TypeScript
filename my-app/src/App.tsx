@@ -59,9 +59,10 @@ const onHandleUpdate = async (product:ProductType) => {
           <Route path="product" element={<Product/>} />
           {/* <Route path="login" element={ <h1>LoginPage</h1> } /> */}
           
+          
+        </Route>
           <Route path="signup" element= {<Signup/>}/>
           <Route path="signin" element= {<Signin/>}/>
-        </Route>
         <Route path="admin" element={<AdminLayout/>}> 
           <Route index element={<Navigate to="dashboard"/>} />
           <Route path="dashboard" element={<Dashboard />} />
