@@ -12,14 +12,13 @@ import AdminLayout from './pages/layouts/AdminLayout';
 import ManagerProduct from './pages/ManagerProduct';
 import ProductAdd from './pages/ProductAdd';
 import { add, list, remove , update } from './api/product';
-import "bootstrap/dist/css/bootstrap.min.css"
 import { ProductType } from './types/product';
 import ProductEdit from './pages/ProductEdit';
 import PrivateRouter from './components/PrivateRouter';
 import Signup from './pages/Signup';
 import Signin from './pages/Singin';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   // const [count, setCount] = useState(0)
