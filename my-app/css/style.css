@@ -861,8 +861,12 @@ i.shipping {
 	background: #2A576C;
 }
 .sign-in {
-	width: 89%;
+	
 	float: left;
+}
+.sign-top-left{
+	margin: 15px;
+
 }
 .sign-up1 {
 	width: 11%;
@@ -4113,6 +4117,7 @@ h3.c-head{
 	.header {
 		min-height: 430px;
 	}
+	
 	.features-section-head h3, .products-section-head h3, .recommand-section-head h3, .contact-section-head h3 {
 		font-size: 2.1em;
 	}

@@ -10,7 +10,7 @@ const Footer = (props: Props) => {
                   </div>
                   <div className="container">
                     <div className="copyrights">
-                      <p>Copyright © 2015 All rights reserved | Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
+                      <p>tuandtph13846@gmail.com | dothanhtuana6ntt2020@gmail.com | 0702022234  <a href="">  </a></p>
                     </div>
                     <div className="footer-social-icons">
                       <a href="#"><i className="fb" /></a>

@@ -1,20 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ProductType } from '../types/product'
-
-type ManagerProductProps = {
-  data: ProductType[],
-  onRemove: (id: number) => void
-
-
+import { CateType } from '../../types/category'
+type ManagerCateProps = {
+    data: CateType[],
+    onRemove : (id: number) => void
 }
 
-const ManagerProduct = (props: ManagerProductProps) => {
+const ManagerCategory = (props: ManagerCateProps) => {
   return (
     <div className='shadow overflow-hidden border-b border-gray-200 sm:rounded-lg'>
 
       <div className="btn-e bg-blue-500 text-white inline-block py-3 px-5 rounded w-20 ">
-        <Link to={`/admin/product/add`}>Add</Link>
+        <Link to={`/admin/category/add`}>Add</Link>
       </div>
 
 
@@ -23,8 +20,6 @@ const ManagerProduct = (props: ManagerProductProps) => {
           <tr>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">STT</th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IMG</th>
             <th></th>
           </tr>
         </thead>
@@ -42,25 +37,13 @@ const ManagerProduct = (props: ManagerProductProps) => {
                 </div>
 
               </td>
-              <td className="px-6 py-4 whitespace-nowrap">
 
-                <div className="flex-shrink-0 h-10 w-10">
-                  {item.price}
-                </div>
-              </td>
-
-              <td className="px-6 py-4 whitespace-nowrap">
-
-                <div className="flex-shrink-0 h-10 w-10">
-                  <img src={item.img}/>
-                </div>
-              </td>
 
 
               <td>
                 <div className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <div className="btn-e bg-blue-500 text-white inline-block py-3 px-5 rounded w-20">
-                    <Link to={`/admin/product/${item._id}/edit`}>Edit</Link>
+                    <Link to={`/admin/category/${item._id}/edit`}>Edit</Link>
                   </div>
 
                 </div>
@@ -79,8 +62,7 @@ const ManagerProduct = (props: ManagerProductProps) => {
         </tbody>
       </table>
     </div>
-
   )
 }
 
-export default ManagerProduct
+export default ManagerCategory

@@ -21,9 +21,9 @@ const AdminLayout = (props: Props) => {
 
                       <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium no-underline" aria-current="page">Dashboard</a>
                       <a href="product" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">Product</a>
-                      <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">User</a>
-                      <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">Calendar</a>
-                      <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">Reports</a>
+                      <a href="category" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">Category</a>
+                      <a href="auth" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">User</a>
+                      <a href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline">Web</a>
                     </div>
                   </div>
                 </div>
