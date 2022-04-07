@@ -16,8 +16,9 @@ const Product =  async (props: Props) => {
             </a>
             <h3 className="my-3"><a href="" className="font-semibold text-lg text-orange-500 ">${'{'}pro.title{'}'}</a></h3>
             <button className="left">${'{'}pro.price{'}'} VNĐ</button> <br />
-            <p>${'{'}pro.desc{'}'}</p>
-            <button className="btn right"><a href="#">Chi tiết</a></button>
+            {/* <p>${'{'}pro.desc{'}'}</p> */}
+            
+            
           </div>
         </div>
       </div>
@@ -30,3 +31,4 @@ const Product =  async (props: Props) => {
   )
 }
 export default Product
+

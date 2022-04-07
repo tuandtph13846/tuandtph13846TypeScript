@@ -23,8 +23,7 @@ const ProductDetail = (props: ListProductDetail) => {
     //     const getProduct = async() => {
     //         const { data } = await read(id);
     //         setProduct(data)
-    //     }
-    //     getProduct();
+    //     }    //     getProduct();
     // }, [id])
     
   return (
@@ -34,48 +33,35 @@ const ProductDetail = (props: ListProductDetail) => {
       <div className="single_left">
         <div className="grid images_3_of_2">
           <ul id="etalage">
-            <li>
-              <a href="optionallink.html">
-                <img className="etalage_thumb_image" src="images/d1.jpg" />
+            <li className="flex flex-wrap justify-center">
+                <div className="image w-96  px-4 m-16">
+                  <img  src={props.data.img} />
+                </div>
                 
-              </a>
+                
+              
             </li>
 
           </ul>
           <div className="clearfix" />		
         </div>
         <div className="desc1 span_3_of_2">
-          <h3>product name here</h3>
-          <p>{props.data.price} <a href="#">click for offer</a></p>
-          <div className="det_nav">
-            <h4>related products :</h4>
-            <ul>
-              <li><a href="#"><img src="images/pic-6.jpg" className="img-responsive" alt="" /></a></li>
-
-            </ul>
+          
+          
+          <div className="det_nav text-5xl">
+            <h4>
+              {props.data.name}
+            </h4>
           </div>
+          <button className="left text-3xl">{props.data.price} VNĐ</button> <br />
+          
           <div className="filter-by-color">
             <h3>Filter by Color</h3>
             <ul className="w_nav2">
               <li><a className="color1" href="#" /></li>
               <li><a className="color2" href="#" /></li>
               <li><a className="color3" href="#" /></li>
-              <li><a className="color4" href="#" /></li>
-              <li><a className="color5" href="#" /></li>
-              <li><a className="color6" href="#" /></li>
-              <li><a className="color7" href="#" /></li>
-              <li><a className="color8" href="#" /></li>
-              <li><a className="color9" href="#" /></li>
-              <li><a className="color10" href="#" /></li>
-              <li><a className="color11" href="#" /></li>
-              <li><a className="color12" href="#" /></li>
-              <li><a className="color13" href="#" /></li>
-              <li><a className="color14" href="#" /></li>
-              <li><a className="color15" href="#" /></li>
-              <li><a className="color16" href="#" /></li>
-              <li><a className="color17" href="#" /></li>
-              <li><a className="color18" href="#" /></li>
-              <li><a className="color19" href="#" /></li>
+
             </ul>
           </div>
           <div className="btn_form">
@@ -88,24 +74,8 @@ const ProductDetail = (props: ListProductDetail) => {
 
       		
     </div>
-    <div className="col-md-3 span_1_of_right">
-      <div className="w_nav1">
-        <h4>All</h4>
-        <ul>
-          <li><a href="products.html">products</a></li>
-          <li><a href="#">new arrivals</a></li>
-          <li><a href="#">trends</a></li>
-          <li><a href="#">Bages</a></li>
-          <li><a href="#">shoes</a></li>
-          <li><a href="#">sale</a></li>
-        </ul>	
-        <h3>filter by</h3>
-      </div>
-
-
-
-    </div>
-  </div></div>
+  </div>
+  </div>
 
   )
 }

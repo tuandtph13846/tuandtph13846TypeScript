@@ -8,10 +8,14 @@ type Props = {}
 const WebsiteLayout = (props: Props) => {
   return (
     <div>
-      <header>
+      <div className="header" id="home">
+            <header>
         <Header />
       </header>
-                <Outlet />
+        <Outlet />
+
+            </div>
+      
           
       <footer>
         <Footer />

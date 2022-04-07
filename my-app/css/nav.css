@@ -20,7 +20,6 @@ ul.nav{
 	padding:0;
 	list-style:none;
 }
-/* Main element of the naviagtion */
 .nav > li {
 	display: inline-block;
 	float:left;
@@ -30,25 +29,21 @@ ul.nav{
 .nav li.active, .nav li a:hover {
 color: #000;
 }
-.nav > li:nth-child(5){
-	background:none;
-}
-/* Link Style */
+
 .nav > li > a {
 	padding: 0px;
-display: block;
-color: #ccd1d9;
-font-size: 1.15em;
-text-transform: uppercase;
-border: none;
-letter-spacing:1px;
-border-style: solid;
-border-color: rgba(255, 255, 255, 0);
-background: url(../images/menu-arrow.png) no-repeat 103% 54%;
-font-weight: 500;
-padding-right: 16px;
+	display: block;
+	color: #ccd1d9;
+	font-size: 1.15em;
+	text-transform: uppercase;
+	border: none;
+	letter-spacing:1px;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0);
+	font-weight: 500;
+	padding-right: 16px;
 }
-.nav > li:nth-child(1) > a,.nav > li:nth-child(5) > a,.nav > li:nth-child(6) > a,
+/* .nav > li:nth-child(1) > a,.nav > li:nth-child(5) > a,.nav > li:nth-child(6) > a,
 .nav > li:nth-child(7) > a{
 	background:none;
 }
@@ -76,15 +71,15 @@ padding-right: 16px;
 	margin-top:30px;
 	padding: 0px;
 	z-index: 99;
-}
+} */
 /* First level appear */
-.nav > li:hover > ul {
+/* .nav > li:hover > ul {
 	opacity: 1;
 	visibility: visible;
 	margin-top: 0px;
-}
+} */
 /* Style for dropdown links */
-.nav li > ul li{	
+/* .nav li > ul li{	
 	position: relative;
  }
 .nav li > ul li a{
@@ -155,9 +150,9 @@ input#mobile_menu { display: none; }
 	opacity: 1;
 	visibility: visible;
 	margin-left: 0px;
-}
+} */
 /* Full width dropdown */
-.nav > li > .fulldrop {
+/* .nav > li > .fulldrop {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
@@ -181,9 +176,9 @@ input#mobile_menu { display: none; }
 }
 .nav ul li:hover:after {
 	color: white;
-}
+} */
 /* coldrop based dropdown */
-.nav .coldrop {
+/* .nav .coldrop {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
@@ -201,7 +196,7 @@ input#mobile_menu { display: none; }
 	opacity: 1;
 	visibility: visible;
 	margin-top: 0px;
-}
+} */
 .nav .coldrop .column {width: 130px;margin:0 9px;}
 /* coldrop for full width dropdown */
 .nav .column {

@@ -11,7 +11,7 @@ import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import AdminLayout from './pages/layouts/AdminLayout';
 import ManagerProduct from './pages/ManagerProduct';
 import ProductAdd from './pages/ProductAdd';
-import { add, list, remove , update } from './api/product';
+import { add, list, read, remove , update } from './api/product';
 import { ProductType } from './types/product';
 import ProductEdit from './pages/ProductEdit';
 import PrivateRouter from './components/PrivateRouter';
@@ -62,7 +62,12 @@ function App() {
   const { data } = await update(product)
   setProduct(products.map(item => item._id == data._id ? data : item));
   }
-
+  const ListProductDetail = async (id: number)=>{
+    const { data } = await read(id)    
+    setProduct(data);
+    console.log(data);
+    
+  }
 
   const [categorys, setCategory] = useState<CateType[]>([])
   //Call API category
@@ -117,9 +122,7 @@ function App() {
     
     
   }
-  const ListProductDetail = async (id: number)=>{
-    const { data } = await li
-  }
+  
   
   return (
     <div>
@@ -130,11 +133,12 @@ function App() {
                   <Route index  element={<Product data={products}/>} />
                   <Route path=":id" element={<ProductDetail data={products} onListDetail={ListProductDetail}/>} />
               </Route>
-          {/* <Route path="login" element={ <h1>LoginPage</h1> } /> */}         
+          {/* <Route path="login" element={ <h1>LoginPage</h1> } /> */}   
+              <Route path="signup" element= {<Signup/>}/>
+          <Route path="signin" element= {<Signin/>}/>  
         </Route>
-
-          <Route path="signup" element= {<Signup/>}/>
-          <Route path="signin" element= {<Signin/>}/>
+    
+          
 
         <Route path="admin" element={<AdminLayout/>}> 
           <Route index element={<Navigate to="dashboard"/>} />

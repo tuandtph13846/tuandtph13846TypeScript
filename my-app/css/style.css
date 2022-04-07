@@ -10,6 +10,7 @@ Author URL: http://w3layouts.com
 --*/
 
 /* reset code */
+
 html {
     scroll-behavior: smooth;
 }
@@ -163,10 +164,11 @@ input[type="Password"] {
 
 .btn:active {
     outline: none;
+	
 }
 
 .btn-primary {
-    color: #fff;
+    color: rgb(19, 4, 4);
     background-color: #9146ff;
     margin-top: 30px;
     outline: none;
@@ -180,13 +182,13 @@ input[type="Password"] {
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
-    border: none;
+   
     text-transform: capitalize;
 }
 
 
 .btn-primary:hover {
-    background-color: #7d32eb;
+    background-color: #CC99FF;
     color: #fff;
 }
 
@@ -869,7 +871,7 @@ i.shipping {
 
 }
 .sign-up1 {
-	width: 11%;
+
 	float: left;
 }
 .signing {

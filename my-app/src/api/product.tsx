@@ -20,7 +20,7 @@ export const update = (product: ProductType) => {
     const url = `/products/${product._id}`;
     return instance.put(url, product);
 }
-export const read = (id: string | undefined) => {
+export const read = (id: number | undefined) => {
     const url = `/products/${id}`;
     return instance.get(url);
 }
