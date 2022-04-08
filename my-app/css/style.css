@@ -672,6 +672,21 @@ label{
 	-ms-background-size:cover;
 	min-height:820px;
 }
+.each-slide > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	height: 600px;
+  }
+  
+  .each-slide span {
+	padding: 20px;
+	font-size: 20px;
+	background: #efefef;
+	text-align: center;
+  }
+  
 .top-header{
 	padding:2em 0;
 	background:#1c242b;
