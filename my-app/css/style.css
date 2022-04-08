@@ -664,7 +664,7 @@ label{
 }
 /*-----start-header----*/
 .header {
-	background: url('../images/banner.jpg') no-repeat 0px 0px;
+	background: url('../images/nền_3.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -1344,7 +1344,7 @@ i.shipping {
 	float:right;
 }
 .subscribe-section{
-	background: url('../images/subscribe-bg.jpg') no-repeat 0px 0px;
+	background: url('../images/banner_search.jpg') no-repeat 0px 0px;
 	background-size:cover;
 	min-height:350px;
 }

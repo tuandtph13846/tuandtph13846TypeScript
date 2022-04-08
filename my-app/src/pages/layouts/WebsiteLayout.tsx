@@ -9,14 +9,14 @@ const WebsiteLayout = (props: Props) => {
   return (
     <div>
       <div className="header" id="home">
-            <header>
-        <Header />
-      </header>
+        <header>
+          <Header />
+        </header>
         <Outlet />
 
-            </div>
-      
-          
+      </div>
+
+
       <footer>
         <Footer />
       </footer>

@@ -128,7 +128,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<WebsiteLayout/>}>
-          <Route index element={<Home/>} />
+          <Route index element={<Home data={products}/>} />
           <Route path="product">
                   <Route index  element={<Product data={products}/>} />
                   <Route path=":id" element={<ProductDetail data={products} onListDetail={ListProductDetail}/>} />
